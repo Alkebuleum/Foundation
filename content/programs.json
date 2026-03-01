@@ -1,0 +1,47 @@
+[
+  {
+    "id": "liberia-anticorruption",
+    "tag": "Featured · 2025",
+    "title": "Liberia Anti-Corruption Technology Program",
+    "description": "Africa's first blockchain-based anti-corruption initiative. Launched in Monrovia — equipping youth, innovators, and public institutions with tools that make corruption structurally impossible. Scaling to all 15 counties through NGO, university, and government partnerships.",
+    "link_label": "Read case study",
+    "url": "#",
+    "featured": true
+  },
+  {
+    "id": "youth-hackathon",
+    "tag": "Education",
+    "title": "National Youth Hackathon Against Corruption",
+    "description": "Annual hackathon building blockchain solutions for government transparency and accountability across Liberia.",
+    "link_label": "Learn more",
+    "url": "#",
+    "featured": false
+  },
+  {
+    "id": "land-registry",
+    "tag": "Research",
+    "title": "Land Registry Pilot",
+    "description": "Immutable property records eliminating title fraud and enabling land as loan collateral for the first time.",
+    "link_label": "Learn more",
+    "url": "#",
+    "featured": false
+  },
+  {
+    "id": "civic-curriculum",
+    "tag": "Curriculum",
+    "title": "Blockchain in Civic Education",
+    "description": "Integrating blockchain literacy into Liberia's national civic curricula, reaching students in every county.",
+    "link_label": "Learn more",
+    "url": "#",
+    "featured": false
+  },
+  {
+    "id": "builder-grants",
+    "tag": "Funding",
+    "title": "Builder Grants Program",
+    "description": "Quarterly grants for African developers, researchers, and entrepreneurs building on Alkebuleum protocols.",
+    "link_label": "Apply now",
+    "url": "#grants",
+    "featured": false
+  }
+]
