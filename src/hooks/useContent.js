@@ -29,8 +29,7 @@ export function useContent(name) {
         setError(null)
         // Cache-bust with a 5-minute window so editors see updates quickly
         const cb  = Math.floor(Date.now() / 300_000)
-        const base = import.meta.env.BASE_URL
-        const res = await fetch(`${base}content/${name}.json?v=${cb}`)
+        const res = await fetch(`/content/${name}.json?v=${cb}`)
         if (!res.ok) throw new Error(`Failed to load ${name}.json (${res.status})`)
         const json = await res.json()
         if (!cancelled) setData(json)
