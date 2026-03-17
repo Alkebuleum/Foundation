@@ -1,14 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Alkebuleum Foundation stewards the first blockchain ecosystem purpose-built for Africa — tackling corruption, identity gaps, and financial exclusion." />
-    <title>Alkebuleum Foundation</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alkebuleum Foundation Inc. — A non-profit organisation stearding the Alkebuleum blockchain ecosystem. Funding research, growing builders, and advancing digital sovereignty." />
+  <meta name="theme-color" content="#0F172A" />
+  <meta property="og:title"       content="Alkebuleum Foundation Inc." />
+  <meta property="og:description" content="Stewarding the Alkebuleum ecosystem through research, grants, and education." />
+  <meta property="og:url"         content="https://alkebuleumfoundation.org/" />
+  <meta property="og:type"        content="website" />
+  <title>Alkebuleum Foundation Inc.</title>
+  <link rel="canonical" href="https://alkebuleumfoundation.org/" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/foundation.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cur" id="cR"><div class="cur-r"></div></div>
+  <div class="cur" id="cD"><div class="cur-d"></div></div>
+
+  <!-- Canvas Background -->
+  <style>
+    /* Only hide cursor once JS confirms custom cursor is active */
+    body.custom-cursor-active { cursor: none !important; }
+    body.custom-cursor-active a,
+    body.custom-cursor-active button { cursor: none !important; }
+  </style>
+  <canvas id="bgc" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="nav">
+    <div class="nav-kente"></div>
+    <div class="nav-body">
+      <div class="wrap nav-inner">
+
+        <a href="index.html" class="logo">
+          <img src="assets/images/main_logo.png" alt="Alkebuleum Foundation" class="logo-svg" />
+          <div class="logo-wm">
+            <span class="logo-a">ALKEBULEUM</span>
+            <span class="logo-b">FOUNDATION</span>
+            <span class="logo-c">INC.</span>
+          </div>
+        </a>
+
+        <ul class="nav-ul" id="nul">
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="https://alkebuleum.org" target="_blank">The Chain ↗</a></li>
+        </ul>
+
+        <a href="#programs" class="btn-nav">Apply for Grant</a>
+
+        <div class="ham" id="ham">
+          <span></span><span></span><span></span>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="f-hero">
+    <div class="f-hero-inner">
+
+      <img src="assets/images/main_logo.png" alt="Alkebuleum Foundation" class="f-hero-logo" />
+
+      <p class="f-eyebrow">Alkebuleum Foundation Inc.</p>
+
+      <h1>Stewarding the<br><em>Origin Chain</em></h1>
+
+      <p class="f-mission">
+        We are a non-profit organisation dedicated to the long-term health
+        of the Alkebuleum ecosystem — funding research, supporting builders,
+        and advancing digital sovereignty rooted in African heritage.
+      </p>
+
+      <div class="f-hero-actions">
+        <a href="#programs" class="btn-primary">Apply for a Grant</a>
+        <a href="#mission" class="btn-ghost">Our Mission</a>
+      </div>
+
+    </div>
+
+    <div class="scroll-hint">Scroll</div>
+    <div class="kente" style="position:absolute;bottom:0;left:0;right:0;opacity:0.5;"></div>
+  </section>
+
+  <!-- ═══ MISSION ═══ -->
+  <section class="f-section" id="mission">
+    <div class="wrap">
+
+      <div class="f-section-header reveal">
+        <p class="sl">Why We Exist</p>
+        <h2 class="st">Our Mission</h2>
+        <p style="color:var(--sand-d);font-size:1.08rem;line-height:1.9;">
+          The Alkebuleum Foundation exists to ensure the ecosystem grows with integrity —
+          open, decentralised, and rooted in the communities it was built to serve.
+          We do not control the chain. We serve it.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+
+        <div class="mission-pillar reveal" style="--pillar-color:var(--blue);">
+          <div class="mp-num">01</div>
+          <div class="mp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0E4F6E" stroke-width="1.4">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <p class="mp-title">Research &amp; Protocol</p>
+          <p class="mp-desc">We fund independent research into protocol design, cryptography, consensus mechanisms, and security — ensuring Alkebuleum remains technically sound and future-proof.</p>
+        </div>
+
+        <div class="mission-pillar reveal" style="--pillar-color:var(--bronze);">
+          <div class="mp-num">02</div>
+          <div class="mp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#A97855" stroke-width="1.4">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12l3 3 5-5"/>
+            </svg>
+          </div>
+          <p class="mp-title">Ecosystem Grants</p>
+          <p class="mp-desc">We provide grants to builders, developers, and community organisers creating open-source public goods on or for the Alkebuleum ecosystem — no equity, no strings.</p>
+        </div>
+
+        <div class="mission-pillar reveal" style="--pillar-color:var(--sand);">
+          <div class="mp-num">03</div>
+          <div class="mp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.4">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <p class="mp-title">Education &amp; Community</p>
+          <p class="mp-desc">We support developer education, community events, and documentation efforts that lower the barrier to participation — especially across the African continent and diaspora.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROGRAMS ═══ -->
+  <section class="f-section" id="programs" style="background:rgba(14,79,110,0.04);border-top:1px solid rgba(14,79,110,0.12);border-bottom:1px solid rgba(14,79,110,0.12);">
+    <div class="wrap">
+
+      <div class="f-section-header reveal">
+        <p class="sl">How We Help</p>
+        <h2 class="st">Foundation Programs</h2>
+        <p style="color:var(--sand-d);font-size:1.08rem;line-height:1.9;">
+          Three programmes through which the Foundation deploys resources into the ecosystem.
+          All funded work is open-source and non-commercial.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+
+        <!-- GRANTS -->
+        <div class="program-card reveal">
+          <span class="pc-tag">Program One</span>
+          <h3 class="pc-title">Ecosystem Grants</h3>
+          <p class="pc-desc">Direct funding for open-source projects building on or for the Alkebuleum ecosystem. Proposals are submitted and voted on-chain via uGov.</p>
+          <div class="pc-expand" aria-hidden="true">
+            <div class="pc-expand-inner">
+              <div style="background:rgba(14,79,110,0.1);border:1px solid rgba(14,79,110,0.25);padding:1.2rem 1.4rem;margin-bottom:1.5rem;">
+                <p style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:0.75rem;">How to Apply</p>
+                <div style="display:flex;flex-direction:column;gap:0.55rem;">
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--blue-l);flex-shrink:0;">01</span> Draft your proposal — problem, solution, roadmap, and budget</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--blue-l);flex-shrink:0;">02</span> Submit on-chain at ugov.cc — requires a connected ALKE wallet</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--blue-l);flex-shrink:0;">03</span> Community review period — 7 days open discussion and Q&amp;A</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--blue-l);flex-shrink:0;">04</span> On-chain vote — token-weighted, 5-day voting window</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--blue-l);flex-shrink:0;">05</span> Funding released in milestones upon community verification</div>
+                </div>
+              </div>
+              <ul style="margin-bottom:1.8rem;">
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Developer tooling &amp; SDKs</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Security research &amp; audits</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Community infrastructure &amp; education</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Anti-corruption &amp; governance tooling</li>
+              </ul>
+              <a href="https://ugov.cc" target="_blank" class="pc-link">Submit Proposal on uGov →</a>
+            </div>
+          </div>
+          <button class="pc-toggle" aria-expanded="false" onclick="toggleProgram(this)">
+            <span class="pc-toggle-label">Learn More</span>
+            <svg class="pc-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- RESEARCH -->
+        <div class="program-card reveal">
+          <span class="pc-tag">Program Two</span>
+          <h3 class="pc-title">Research Initiative</h3>
+          <p class="pc-desc">Funding independent research aligned with the Alkebuleum Whitepaper — with AI and blockchain convergence as the ultimate horizon.</p>
+          <div class="pc-expand" aria-hidden="true">
+            <div class="pc-expand-inner">
+              <div style="background:rgba(169,120,85,0.06);border:1px solid rgba(169,120,85,0.2);padding:1.2rem 1.4rem;margin-bottom:1.5rem;">
+                <p style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:0.85rem;">Active Research Tracks</p>
+                <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--bronze);flex-shrink:0;">◆</span> AI agent identity &amp; on-chain reputation — bridging LLM behaviour with verifiable credentials</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--bronze);flex-shrink:0;">◆</span> Trustless AI execution rails — fast-finality AI computation checkpointed to L1</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--bronze);flex-shrink:0;">◆</span> Decentralised governance for African public institutions — accountability via smart contracts</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--bronze);flex-shrink:0;">◆</span> Sovereign digital identity — self-custody ID systems for underserved populations</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--bronze);flex-shrink:0;">◆</span> Zero-knowledge proofs for privacy-preserving civic applications</div>
+                </div>
+              </div>
+              <ul style="margin-bottom:1.8rem;">
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> All outputs published open-source</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> University &amp; independent researcher partnerships</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Whitepaper available at alkebuleum.org</li>
+              </ul>
+              <a href="https://alkebuleum.org/AlkebuleumWhitepaper.pdf" target="_blank" class="pc-link">Read the Whitepaper →</a>
+            </div>
+          </div>
+          <button class="pc-toggle" aria-expanded="false" onclick="toggleProgram(this)">
+            <span class="pc-toggle-label">Learn More</span>
+            <svg class="pc-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- FELLOWSHIP -->
+        <div class="program-card reveal">
+          <span class="pc-tag">Program Three</span>
+          <h3 class="pc-title">Builder Fellowship</h3>
+          <p class="pc-desc">A six-month programme for early-stage founders and developers building on Alkebuleum — funding, mentorship, and ecosystem access. No equity taken.</p>
+          <div class="pc-expand" aria-hidden="true">
+            <div class="pc-expand-inner">
+              <div style="background:rgba(203,178,148,0.05);border:1px solid rgba(203,178,148,0.15);padding:1.2rem 1.4rem;margin-bottom:1.5rem;">
+                <p style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bronze);margin-bottom:0.85rem;">Fellowship Track</p>
+                <div style="display:flex;flex-direction:column;gap:0.55rem;">
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--sand-d);flex-shrink:0;min-width:5rem;">Month 1–2</span> Onboarding, scoping, and technical architecture review</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--sand-d);flex-shrink:0;min-width:5rem;">Month 3–4</span> Active build phase with bi-weekly Foundation check-ins</div>
+                  <div style="font-family:var(--font-ui);font-size:0.63rem;letter-spacing:0.1em;color:var(--sand-d);display:flex;gap:0.75rem;align-items:flex-start;"><span style="color:var(--sand-d);flex-shrink:0;min-width:5rem;">Month 5–6</span> Launch preparation, ecosystem integration &amp; demo day</div>
+                </div>
+              </div>
+              <ul style="margin-bottom:1.8rem;">
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Direct funding — no equity taken</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Mentorship from Foundation &amp; ecosystem leaders</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Access to uGov for community-backed proposals</li>
+                <li style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.12em;color:var(--sand-d);display:flex;align-items:center;gap:0.6rem;"><span style="color:var(--bronze);">→</span> Demo day &amp; investor introductions</li>
+              </ul>
+              <a href="/cdn-cgi/l/email-protection#761f18101936171a1d1314031a13031b58190411490503141c1315024b34031f1a1213045630131a1a1901051e1f06563706061a1f1517021f1918" class="pc-link">Apply via Email →</a>
+            </div>
+          </div>
+          <button class="pc-toggle" aria-expanded="false" onclick="toggleProgram(this)">
+            <span class="pc-toggle-label">Learn More</span>
+            <svg class="pc-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM ═══ -->
+  <section class="f-section" id="team">
+    <div class="wrap">
+
+      <div class="f-section-header reveal">
+        <p class="sl">The People</p>
+        <h2 class="st">Leadership &amp; Team</h2>
+        <p style="color:var(--sand-d);font-size:1.08rem;line-height:1.9;">
+          The Foundation is led by a small, dedicated team committed to
+          the long-term mission of the Alkebuleum ecosystem.
+        </p>
+      </div>
+
+            <!-- TEAM GRID — edit names/roles/photos here -->
+      <div class="team-grid reveal" style="grid-template-columns:repeat(3,1fr);">
+        
+        <div class="team-card">
+          <img src="assets/team/sharufa-walker.jpg" alt="Sharufa R. Walker" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Sharufa R. Walker</p>
+            <p class="team-role">Global Strategist</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/ernesto-herbert.jpg" alt="Ernesto Herbert" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Ernesto Herbert</p>
+            <p class="team-role">Executive Director</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/beyan-gonowolo.jpg" alt="Beyan I. Gonowolo" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Beyan I. Gonowolo</p>
+            <p class="team-role">Operations Lead</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/amine-duhumy.png" alt="Amine Duhumy" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Amine Duhumy</p>
+            <p class="team-role">Senior Ambassador Coordinator</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/raymond-wheeler.png" alt="Raymond Wheeler" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Raymond Wheeler</p>
+            <p class="team-role">Alkebuleum Ambassador</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/therese-parker.jpg" alt="Therese Parker" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Therese Parker</p>
+            <p class="team-role">Alkebuleum Ambassador</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/edward-dickson.png" alt="Edward Z. Dickson" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Edward Z. Dickson</p>
+            <p class="team-role">Executive Director</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/isaac-thor.jpg" alt="Isaac Thor" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Isaac Thor</p>
+            <p class="team-role">Cybersecurity Specialist</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/putugal-johnson.png" alt="Putugal Johnson" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Putugal Johnson</p>
+            <p class="team-role">Pop Culture Business Strategist</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="assets/team/amos.png" alt="Amos" class="team-photo" />
+          <div class="team-card-body">
+            <p class="team-name">Amos</p>
+            <p class="team-role">Alkebuleum Ambassador</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#CBB294" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /team-grid -->
+    </div>
+  </section>
+
+  <!-- ═══ THE CHAIN ═══ -->
+  <section class="chain-section" id="chain">
+    <div class="wrap">
+      <div class="chain-inner">
+
+        <div class="chain-logo reveal">
+          <div class="chain-logo-ring"></div>
+          <img src="assets/images/3D_logo.png" alt="Alkebuleum" class="chain-logo-img" />
+        </div>
+
+        <div class="chain-copy reveal">
+          <p class="sl">The Underlying Network</p>
+          <h2 class="st">About <em>Alkebuleum</em></h2>
+          <p>
+            Alkebuleum is the sovereign, EVM-compatible Layer 1 blockchain that
+            the Foundation supports. It is not controlled by the Foundation —
+            it is maintained by a decentralised network of validators, developers,
+            and community contributors worldwide.
+          </p>
+          <div class="chain-stats">
+            <div class="cs-item"><span class="cs-v">EVM</span><span class="cs-l">Compatible</span></div>
+            <div class="cs-item"><span class="cs-v">L1</span><span class="cs-l">Layer Type</span></div>
+            <div class="cs-item"><span class="cs-v">237422</span><span class="cs-l">Chain ID</span></div>
+          </div>
+          <a href="https://alkebuleum.org" target="_blank" class="btn-ghost">Visit alkebuleum.org ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ NEWS ═══ -->
+  <section class="news-section" id="news">
+    <div class="wrap">
+
+      <div class="news-header reveal">
+        <div>
+          <p class="sl">Latest</p>
+          <h2 class="st">News &amp; Updates</h2>
+        </div>
+        <a href="#" class="news-link-all">All Updates →</a>
+      </div>
+
+      <!--
+        NEWS CARDS
+        ───────────────────────────────────────
+        To add a real post:
+          - Update .nc-date with the publish date
+          - Update .nc-tag with the category
+          - Update .nc-title with the headline
+          - Update .nc-excerpt with 1–2 sentences
+          - Update the href on the card <a> tag
+        ───────────────────────────────────────
+      -->
+      <div class="news-grid">
+
+        <a href="https://frontpageafricaonline.com/news/alkebuleum-blockchain-launches-liberias-first-anti-corruption-technology-program/" target="_blank" class="news-card reveal">
+          <p class="nc-date">July 2, 2025</p>
+          <p class="nc-tag">Press Coverage · FrontPageAfrica</p>
+          <h3 class="nc-title">Alkebuleum Launches Liberia's First Anti-Corruption Technology Program</h3>
+          <p class="nc-excerpt">Alkebuleum introduced blockchain-based solutions in Monrovia aimed at enhancing transparency and accountability in governance — with plans to scale to all 15 counties and integrate into civic education curricula.</p>
+          <span class="nc-read">Read More</span>
+        </a>
+
+        <a href="https://alkebuleum.org/AlkebuleumWhitepaper.pdf" target="_blank" class="news-card reveal">
+          <p class="nc-date">Foundation Update</p>
+          <p class="nc-tag">Research · Whitepaper</p>
+          <h3 class="nc-title">The Alkebuleum Whitepaper: A Pan-African Blockchain Protocol</h3>
+          <p class="nc-excerpt">The foundational document outlining Alkebuleum's vision for a blockchain ecosystem built specifically for Africa — addressing governance, land rights, financial inclusion, and digital sovereignty through decentralised technology.</p>
+          <span class="nc-read">Read the Whitepaper</span>
+        </a>
+
+        <a href="https://github.com/Alkebuleum" target="_blank" class="news-card reveal">
+          <p class="nc-date">Active Development</p>
+          <p class="nc-tag">Engineering · Open Source</p>
+          <h3 class="nc-title">Alkebuleum Ecosystem Repositories Now Open on GitHub</h3>
+          <p class="nc-excerpt">The Alkebuleum organisation on GitHub hosts the open-source code for the chain, the Foundation website, and ecosystem tooling — reflecting the Foundation's commitment to transparent, community-driven development.</p>
+          <span class="nc-read">View on GitHub</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="kente" style="opacity:0.4;"></div>
+    <div class="wrap" style="padding-top:3.5rem;">
+      <div class="ft-grid">
+
+        <div class="ft-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/main_logo.png" alt="Alkebuleum Foundation" class="logo-svg" />
+            <div class="logo-wm">
+              <span class="logo-a">ALKEBULEUM</span>
+              <span class="logo-b">FOUNDATION</span>
+              <span class="logo-c">INC.</span>
+            </div>
+          </a>
+          <p>A non-profit organisation stewarding the Alkebuleum blockchain ecosystem through research, grants, and community education.</p>
+          <p class="ft-contact">
+            General enquiries:<br>
+            <a href="/cdn-cgi/l/email-protection#94fcf1f8f8fbd4f5f8fff1f6e1f8f1e1f9f2fbe1faf0f5e0fdfbfabafbe6f3"><span class="__cf_email__" data-cfemail="6008050c0c0f20010c0b0502150c05150d060f150e040114090f0e4e0f1207">[email&#160;protected]</span></a>
+          </p>
+        </div>
+
+        <div class="ft-col">
+          <h5>Foundation</h5>
+          <ul>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#">Annual Report</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h5>Programs</h5>
+          <ul>
+            <li><a href="#">Ecosystem Grants</a></li>
+            <li><a href="#">Research Initiative</a></li>
+            <li><a href="#">Builder Fellowship</a></li>
+            <li><a href="#">Apply Now</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://alkebuleum.org" target="_blank">Alkebuleum Chain ↗</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Discord</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="ft-bottom">
+        <p class="ft-copy">&copy; 2025 Alkebuleum Foundation Inc. All rights reserved.</p>
+        <div class="ft-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </
